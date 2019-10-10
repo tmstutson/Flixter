@@ -59,9 +59,13 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 body {
 	background: image_url('white-waves.png');
-	font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+	font-family: "Helvetica Neue", Helvetica; 
 }
 
+
+.booyah-box h2, .booyah-box h1 {
+	margin: 10px;
+}
 
 
 .booyah-box {
@@ -71,4 +75,5 @@ body {
   background: #fff;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding: 10px;
 }
