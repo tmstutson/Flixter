@@ -67,6 +67,7 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
 gem 'devise'
 gem 'simple_form'
+gem 'carrierwave', '~> 2.0'
 
 
 
