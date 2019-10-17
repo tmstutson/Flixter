@@ -1,5 +1,4 @@
 class Course < ApplicationRecord
-	mount_uploader :images, ImageUploader
 	belongs_to :user
 	has_many :sections
 

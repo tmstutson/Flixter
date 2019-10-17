@@ -68,7 +68,7 @@ gem 'popper_js', '~> 1.14.5'
 gem 'devise'
 gem 'simple_form'
 gem 'carrierwave', '~> 2.0'
-
+gem "mini_magick"
 
 
 source 'https://rails-assets.org' do
