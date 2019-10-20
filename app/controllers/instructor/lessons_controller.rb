@@ -26,6 +26,6 @@ class Instructor::LessonsController < ApplicationController
   		@current_section ||= Section.find(params[:section_id])
 
 	def lesson_params
-	   params.require(:lesson).permit(:title, :subtitle)
+	   params.require(:lesson).permit(:title, :subtitle, :video)
 	end
 end
