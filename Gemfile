@@ -70,7 +70,7 @@ gem 'simple_form'
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
 gem 'carrierwave-aws'
-
+gem 'stripe'
 
 
 source 'https://rails-assets.org' do

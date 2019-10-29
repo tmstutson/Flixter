@@ -1,6 +1,6 @@
 class Instructor::CoursesController < ApplicationController
 	before_action :authenticate_user!
-	before_action :require_authroized_for_current_course, only: [:show]
+	before_action :require_authorized_for_current_course, only: [:show]
 
 	def new
 		@course = Course.new
@@ -8,7 +8,6 @@ class Instructor::CoursesController < ApplicationController
 
 	def create
 	    @course = current_user.courses.create(course_params)
-	    redirect_to instructor_course_path(@course)
 	    if @course.valid?
       		redirect_to instructor_course_path(@course)
     	else
