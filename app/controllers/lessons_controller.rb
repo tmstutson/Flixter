@@ -5,23 +5,13 @@ class LessonsController < ApplicationController
 	def show
 	end
 
-private 
-
-helper_method :current_lesson
-def current_lesson
-	@current_lesson ||= Lesson.find(params[:id])
-	    @lesson = current_lesson.section.course
-	    redirect_to instructor_course_path(@course)
-	    if @current_user.enrolled_in?
-      		redirect_to 
-    	else
-      		render :new, status: :unprocessable_entity
-   		 end
-	  end
+	private 
+	
+	def require_authorized_for_current_lesson
+		if current_user.enrolled_in? != current_user
+			redirect_to course_enrollments_path(@course), alert: 'You are not authorized to view this lesson'
+		end
 	end
-
-
-end
 
 
 
