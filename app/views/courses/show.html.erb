@@ -5,9 +5,9 @@
 	<h1><%= @course.title %></h1>
   <%= image_tag @course.image, class: 'img-fluid' %>
 	<br />
-	<div class="row">
-	<div class="col-sm-4 col-12 text-center">
-		<span class="badge badge-default">
+  <div class="row">
+  	<div class="col-sm-4 col-12 text-center">
+  		<span class="badge badge-default">
       	  <%= number_to_currency @course.cost %>
   		</span>
 
@@ -39,41 +39,40 @@
                 data-amount="<%= (@course.cost * 100).to_i %>"
                 data-locale="auto"></script>
           <% end %>
+           <h3 class="badge badge-info">Sign In to Enroll!</h3>
+          <% else %>
         <% end %>
-      <% end %>
-      <% else %>
-        <h3 class="badge badge-info">Sign In to Enroll!</h3>
         <% end %>
   	</div>
 
-  <div class="col-sm-8 col-12">
+    <div class="col-sm-8 col-12">
     <%= @course.description %>
-  </div>
+    </div>
 </div>
 
 <div class="col-12">
   <% @course.sections.each do |section| %>
-      <br /><br />
-      <div class="section">
-        <h3>
-          <%= section.title %>
-        </h3>
-        <div class="row">
-        <% section.lessons.each do |lesson| %>
-        <div class="col-12 col-sm-6">
-          <div class="lesson text-center">
-            <br />
-            <%= link_to lesson_path(lesson) do %>
-              <b><%= lesson.title%></b>
-              <br />
-            <%= lesson.subtitle %>
-          <% end %>
-        </div>
+  <br /><br />
+  <div class="section">
+      <h3>
+      <%= section.title %>
+      </h3>
+    <div class="row">
+      <% section.lessons.rank(:row_order).each do |lesson| %>
+    <div class="col-12 col-sm-6">
+      <div class="lesson text-center">
+        <br />
+        <%= link_to lesson_path(lesson) do %>
+        <b><%= lesson.title%></b>
+        <br />
+        <%= lesson.subtitle %>
+        <% end %>
+        </div>  
       </div>
       <% end %>
+      </div>
+       <br class=clr />
     </div>
-    <br class=clr />
+    <% end %>
   </div>
-  <% end %>
- </div>
 </div>
