@@ -1,6 +1,23 @@
+<script>
+    $(function() {
+      $('.lessons li').sortable({
+        update: function(event, ui) {
+          $.ajax({
+            type: 'PUT', 
+            url: ui.item.data('update_url'),
+            dataType: 'json',
+            data: {lesson: {row_order_position: ui.item.index() } }
+          });
+        }
+      });
+    });
+</script>
+
+
 <br />
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= current_course.title %></h1>
+  <%= image_tag current_course.image, class: 'img-fluid' %>
   <br />
   <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
   <br class="clr" />
@@ -14,9 +31,9 @@
       <li>
         <%= section.title %>
         <%= link_to 'New Lesson', new_instructor_section_lessons_path(section), class: 'float-right btn btn-primary btn-sm' %>
-         <ul>
+         <ul class="lessons">
           <% section.lessons.rank(:row_order).each do |lesson| %>
-            <li>
+            <li data-update-url="<%= instructor_lesson_path(lesson) %>">
               <b><%= lesson.title %></b>
               -
               <%= lesson.subtitle %>
@@ -27,9 +44,6 @@
       </li>
     <% end %>
   </ul>
-
-<%= image_tag @course.image, class: 'img-fluid' %>
-<% end %>
 </div>
 
 
