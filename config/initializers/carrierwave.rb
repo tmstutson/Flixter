@@ -12,3 +12,17 @@ CarrierWave.configure do |config|
     region:            ENV["AWS_REGION"]              # required
   }
 end
+
+
+
+
+
+
+
+
+#If you see an error message that begins Errno::ETXTBSY in Instructor::LessonsController#create "Text file busy" and you are running Vagrant on a Windows Computer, a small change will help resolve the errors. Open config/intializers/carrierwave.rb and update the code to be as follows:
+
+#if Rails.env.development?
+  #config.cache_dir = '/home/vagrant/uploads_tmp/tmp/uploads'
+  #config.root = '/home/vagrant/uploads_tmp/tmp'
+#end

@@ -1,8 +1,8 @@
 #config/application.yml
 
-AWS-ACCESS_KEY: "AKIAINTQWREBAKRN6WKQ"
-AWS_SECRET_KEY: "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"
-AWS_BUCKET: "tmcodeflixter"
+AWS-ACCESS_KEY: "AKIA5VRSWNEKDJLJTMVL"
+AWS_SECRET_KEY: "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"
+AWS_BUCKET: "tmcodesflixter"
 AWS_REGION: "us-east-1"
 
 
