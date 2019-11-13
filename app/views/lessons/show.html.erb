@@ -2,7 +2,7 @@
 
 
 <div class="booyah-box col-10 offset-1">
-	<p> class="float-left">
+	<p class="float-left">
 	<h1><%= current_lesson.title %></h1>
 	<p>
 		<%= current_lessons.subtitle %>
@@ -10,7 +10,7 @@
 
 
 	<% if current_lesson.next_lesson.present? %>
-    <%= link_to "Next Lesson", lesson_path(current_lesson.next_lesson), class: 'btn btn-default float-right' %>
+   <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default float-right' do %>
     Next Lesson &nbsp;
     <span class="fa fa-forward"></span>
     <% end %>
