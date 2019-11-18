@@ -12,6 +12,7 @@ class LessonsController < ApplicationController
 			redirect_to course_enrollments_path(@course), alert: 'You are not authorized to view this lesson'
 		end
 	end
+end 
 
 
 
